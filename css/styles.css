@@ -1,0 +1,337 @@
+.hiden{
+    display: none;
+}
+
+/* #region Main*/
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: #fff;
+    color: #434455;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 320px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+@media screen and (min-width: 1158px) {
+    .container{
+        max-width: 1158px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+/* #endregion*/
+
+/* #region header*/
+.header {
+    display: block;
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav-menu,
+.header-address{
+    display: none;
+}
+
+.header-logo {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4d5ae5;
+    padding: 16px 0;
+
+}
+
+.header-logo .header-logo-span {
+    color: #2e2f42;
+}
+
+.burger-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.header-menu-icon{
+    display: block;
+    fill: #2f2f37;
+}
+
+@media screen and (min-width:768px) {
+    .burger-btn {
+            display: none;
+        }
+    .header-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-nav-menu {
+        display: flex;
+        gap: 40px;
+
+    }
+
+    .header-nav-menu:last-child {
+        margin-right: 0;
+    }
+
+    .header-logo {
+        padding: 24px 0;
+        margin-right: 120px;
+    }
+    .header-address {
+        font-style: normal;
+      /*  margin-left: auto;*/
+        display: block;
+        }
+    .header-nav-title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #2e2f42;
+        padding: 24px 0;
+    }
+
+    .header-nav-title:hover {
+        color: #404bbf;
+    }
+
+    .header-nav-title:focus {
+        color: #404bbf;
+    }
+
+    .current-link::after {
+        position: absolute;
+        content: "";
+        border-radius: 2px;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 4px;
+        background-color: #404bbf;
+    }
+
+    .current-link {
+        position: relative;
+        color: #404bbf;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+    .header-address {
+        font-style: normal;
+        margin-left: auto;
+    }
+
+    .header-address-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-address-list:last-child {
+        margin-right: 0;
+    }
+
+    .header-address-item {
+        display: block;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: #434455;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header-address-item:hover,
+    .header-address-item:focus {
+        color: #404bbf;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .header-logo {
+        margin-right: 76px;
+    }
+
+    .header-address-list {
+        align-items: center;
+        flex-direction: row;
+        gap: 40px;
+    }
+    .header-address-item {
+        padding: 24px 0;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+    }
+}
+/* #endregion*/
+
+/* #region mobile menu*/
+.mobile-menu {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-menu-conteiner {
+    position: relative;
+    padding-top: 72px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mob-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #e7e9fc;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-close-btn:hover,
+.mob-close-btn:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+ .mob-close-btn-icon {
+     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .mob-close-btn:hover .mob-close-btn-icon,
+ .mob-close-btn:focus .mob-close-btn-icon {
+     fill: #ffffff
+ }
+
+ .mob-header-nav{
+    margin-bottom: auto;
+ }
+ .mob-header-nav-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+ }
+
+ .mob-nav-title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11111;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+ }
+
+ .mob-nav-title:hover,
+ .mob-nav-title:focus {
+     color: #404bbf;
+ }
+
+ .mob-current-link{
+    color: #404bbf;
+ }
+@media screen and (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+/* #endregion*/
+
+
