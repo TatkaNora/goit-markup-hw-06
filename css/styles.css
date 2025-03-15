@@ -1170,60 +1170,187 @@ button {
     justify-content: center;
     max-width: 767px;
     margin: 0 auto;
-  /*  text-align: center;*/
+    gap: 72px;
 }
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Центрує вміст */
-    justify-content: center;
-    width: 100%;
-}
+    /* #region footer section logo*/
 
-.footer-logo {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.17;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #4d5ae5;
-    display: block;
-    /* Робимо блоковим */
-    text-align: center;
-    /* Додає можливість центрованого вирівнювання */
-    width: max-content;
-    /* Запобігає розтягуванню */
-    margin: 0 auto 16px auto;
-    /* Центрує логотип */
-}
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
-.footer-logo-style {
-    color: #f4f4fd;
-}
+    .footer-logo {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.17;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #4d5ae5;
+        display: block;
+        text-align: center;
+        width: max-content;
+        margin: 0 auto 16px;
+   }
 
-.footer-p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #f4f4fd;
-    max-width: 288px;
-    margin: 0 auto;
-    /* Контейнер центрується, але текст не змінює вирівнювання */
-}
-.footer-social-media {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
+    .footer-logo-style {
+        color: #f4f4fd;
+    }
 
-/* ====== Планшетна версія ====== */
+    .footer-p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #f4f4fd;
+        max-width: 288px;
+        margin: 0 auto 72px;
+    }
 
-@media screen and (min-width: 768px) {
+    /* #endregion*/
+
+    /* #region footer social-media*/
+
+        .footer-social-media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            justify-content: center;
+            max-height: 80px;
+        }
+        .footer-social-media-p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+        }
+
+        .footer-list {
+            display: flex;
+            gap: 16px;
+            margin-top: 0;
+            margin-right: auto;
+            margin-bottom: 72px;
+        }
+
+        .foter-list-item {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-icon-link {
+            width: 100%;
+            height: 100%;
+            background-color: #4d5ae5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer-icon-link:hover,
+        .footer-icon-link:focus {
+            background-color: #31d0aa;
+        }
+
+        .footer-icon {
+            fill: #f4f4fd;
+        }
+
+    /*#endregion*/
+
+    /* #region footer footer-subscribe*/
+        .footer-subscribe {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+    
+        .footer-subscribe-header {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            color: #fff;
+        }
+    
+        .footer-subscribe-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+        }
+    
+        .footer-input-lable {
+            gap: 16px;
+        }
+    
+        .footer-input {
+            border: 1px solid #fff;
+            border-radius: 4px;
+            width: 264px;
+            height: 40px;
+            background-color: transparent;
+            color: #ffffff;
+            padding-left: 16px;
+            font-size: 12px;
+            line-height: 2;
+            letter-spacing: 0.04em;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+        }
+    
+        .footer-input::placeholder {
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 2;
+            letter-spacing: 0.04em;
+        }
+    
+         .footer-subscribe-button {
+            width: 165px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #ffffff;
+            cursor: pointer;
+            background: #4d5ae5;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 0 auto;
+        }
+
+        .footer-subscribe-icon {
+            margin-left: 16px;
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+        }
+    
+        .footer-subscribe-button:hover {
+            background: #31d0aa;
+        }
+    /* #endregion */
+
+    @media screen and (min-width: 768px) {
     .footer-container {
         flex-direction: row;
         align-items: flex-start;
@@ -1259,7 +1386,7 @@ button {
 }
 
 
-@media screen and (min-width: 1158px) {
+    @media screen and (min-width: 1158px) {
     .footer {
         padding: 100px 0;  
         max-width: 1440px;
